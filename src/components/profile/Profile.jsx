@@ -6,6 +6,16 @@ const Card = styled.div`
   max-width: 200px;
   padding: 1rem;
   box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover h2 {
+    color: black;
+    transform: scale(1.03);
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
 `;
 
 const Avatar = styled.img`
@@ -24,10 +34,11 @@ export default function Profile({ profile, setActiveProfile }) {
 
   const history = useHistory();
 
-  function activeProfileHandler() {
+  const activeProfileHandler = () => {
     setActiveProfile(profile);
+    console.log(profile);
     history.push("/home");
-  }
+  };
 
   return (
     <Card onClick={activeProfileHandler}>

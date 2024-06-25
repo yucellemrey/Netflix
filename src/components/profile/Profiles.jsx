@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { profilesData } from "../../profiles";
-import Profile from "./Profile"; // Ensure this path is correct
+import Profile from "./Profile";
 import { useState } from "react";
 
 const ProfilesContainer = styled.div`
@@ -12,7 +12,7 @@ const ProfilesContainer = styled.div`
 `;
 
 export default function Profiles(props) {
-  const { setActiveProfile } = props; // corrected here
+  const { setActiveProfile } = props;
   const [profiles, setProfiles] = useState(profilesData);
 
   return (
@@ -21,7 +21,7 @@ export default function Profiles(props) {
         <Profile
           key={profile.id}
           profile={profile}
-          setActiveProfile={setActiveProfile} // corrected here
+          setActiveProfile={setActiveProfile}
         />
       ))}
     </ProfilesContainer>
